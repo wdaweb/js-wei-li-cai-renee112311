@@ -17,13 +17,11 @@
         let num38 = 0;
         let num8 = 0;
         let conti = true;
-
-
         for (let i = 0; i < 6; i++) {
             conti = true;
             num38 = rand(1, 38);
             while (conti) {
-                if (!arr38.indexOf(num38) < 0) {
+                if (arr38.indexOf(num38) > -1) {
                     num38 = rand(1, 38);
                 }
                 else {
@@ -33,21 +31,9 @@
             }
         }
 
-        conti = true;
-        while (conti) {
-            num8 = rand(1, 8);
-            if (!arr38.indexOf(num8) < 0) {
-                num8 = rand(1, 8);
-            }
-            else {
-                conti = false;
-            }
-        }
-
-        arr38.push(num8);
-
+        num8 = rand(1, 8);
         document.write(arr38);
-
+        document.write("<br>" + num8);
 
     </script>
 </body>
