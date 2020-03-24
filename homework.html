@@ -14,41 +14,34 @@
         }
 
         let arr38 = [0, 0, 0, 0, 0, 0];
+        let num38 = 0;
         let num8 = 0;
         let conti = true;
 
+
         for (let i = 0; i < 6; i++) {
-            arr[i] = rand(1, 38);
-        }
-
-        while (conti) {
-            for (let j = 0; j < 6; j++) {
-                for (let k = 0; k < 6; k++) {
-                    if (arr[j] = arr[k]) {
-                        arr[j] = rand(1, 38);
-                    }
-                    else {
-                        conti = false;
-                    }
-                }
-
-            }
-
-        }
-
-        num8 = rand(1, 8);
-        conti = true;
-
-        while (conti) {
-            for (let j = 0; j < 6; j++) {
-                if (arr[j] = num8) {
-                    num8 = rand(1, 8);
+            conti = true;
+            num38 = rand(1, 38);
+            while (conti) {
+                if (!arr38.indexOf(num38) < 0) {
+                    num38 = rand(1, 38);
                 }
                 else {
+                    arr38[i] = num38;
                     conti = false;
                 }
             }
+        }
 
+        conti = true;
+        while (conti) {
+            num8 = rand(1, 8);
+            if (!arr38.indexOf(num8) < 0) {
+                num8 = rand(1, 8);
+            }
+            else {
+                conti = false;
+            }
         }
 
         arr38.push(num8);
